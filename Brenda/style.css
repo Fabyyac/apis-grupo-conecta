@@ -1,0 +1,167 @@
+/* 🔧 Reset e base de estilo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  background-color: #0F2027 ;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+/* 🔲 Container principal */
+.container {
+  background-color: #203A43;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+}
+
+/* 🎯 Cabeçalho */
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #FFFFFF;
+}
+
+/* 🔐 Área da API Key */
+.api-key-section {
+  margin-top: 1rem;
+}
+
+.api-key-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.api-key-group input {
+  padding: 0.5rem;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.api-key-group button {
+  padding: 0.5rem 1.2rem;
+  background-color: #00C9A7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.api-key-group button:hover {
+  background-color: #219150;
+}
+
+/* 📝 Campo de pergunta */
+.pergunta-section {
+  margin-bottom: 1rem;
+}
+
+.input-pergunta {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  min-height: 120px;
+  font-size: 1rem;
+}
+
+/* 📤 Botão de envio */
+.btn-enviar {
+  padding: 0.8rem 1.5rem;
+  background-color: #00B4DB;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #2980b9;
+}
+
+/* 💬 Área da resposta */
+#resposta {
+  background-color: #20404e;
+  padding: 1.2rem;
+  margin-top: 1rem;
+  border-left: 5px solid #3498db;
+  border-radius: 10px;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+/* 🧰 Botões de ação */
+.botoes-acoes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.botoes-acoes button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Copiar */
+#btnCopiar {
+  background-color: #8e44ad;
+  color: white;
+}
+
+#btnCopiar:hover {
+  background-color: #732d91;
+}
+
+/* Limpar */
+#btnLimpar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#btnLimpar:hover {
+  background-color: #c0392b;
+}
+
+/* 📱 Responsividade extra */
+@media (max-width: 600px) {
+  .api-key-group input {
+    width: 100%;
+  }
+
+  .botoes-acoes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-enviar, .botoes-acoes button {
+    width: 100%;
+  }
+}

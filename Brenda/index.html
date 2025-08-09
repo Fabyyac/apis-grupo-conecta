@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="icon" href="./robot.png">
+  <title>Assistente de IA</title> 
+</head>
+<body>
+  <div class="container">
+
+   
+    <header class="header">
+      <h1> Assistente de IA </h1>
+      <img src="./robot.png" width="50px"  alt="imagem de um robo">
+
+      <div class="api-key-section">
+        <div class="api-inputs-row">
+          <div class="api-key-group">
+            <label for="apikey">Google Gemini API Key</label> 
+            <input type="password" id="apikey" placeholder="Digite sua chave aqui"> 
+            <button onclick="salvarApiKey()">Salvar</button> 
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="pergunta-section">
+        <label for="pergunta">Faça sua pergunta:</label>
+        <textarea id="pergunta" class="input-pergunta" placeholder="Digite sua pergunta..."></textarea>
+        <button id="btnPerguntar" class="btn-enviar">Perguntar</button>
+      </div>
+
+      
+      <div id="resposta" style="display: none;"></div>
+
+     
+      <div class="botoes-acoes" style="display: none;">
+        <button id="btnCopiar">📋 Copiar Resposta</button>
+        <button id="btnLimpar">🧹 Limpar</button>
+      </div>
+    </main>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
