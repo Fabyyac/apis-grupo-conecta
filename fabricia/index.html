@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Linguagem do documento definida como Português do Brasil -->
+<head>
+  <meta charset="UTF-8"> <!-- Define o padrão de codificação como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para dispositivos móveis -->
+  <link rel="stylesheet" href="style.css"> <!-- Linka o CSS externo -->
+  <title>Assistente de IA</title> <!-- Título da aba -->
+</head>
+<body>
+  <div class="container">
+
+    <!-- Cabeçalho -->
+    <header class="header">
+      <h1>🤖 Assistente de IA 🤖</h1>
+
+      <!-- Área de chave da API -->
+      <div class="api-key-section">
+        <div class="api-inputs-row">
+          <div class="api-key-group">
+            <label for="apikey">Google Gemini API Key</label> <!-- ❗ Troquei de "OpenAI" para "Google Gemini" -->
+            <input type="password" id="apikey" placeholder="Digite sua chave aqui"> <!-- Campo onde a chave será inserida -->
+            <button onclick="salvarApiKey()">Salvar</button> <!-- Botão para salvar a chave no localStorage -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Área principal da aplicação -->
+    <main>
+      <div class="pergunta-section">
+        <label for="pergunta">Faça sua pergunta:</label>
+        <textarea id="pergunta" class="input-pergunta" placeholder="Digite sua pergunta..."></textarea>
+        <button id="btnPerguntar" class="btn-enviar">Perguntar</button>
+      </div>
+
+      <!-- Área da resposta (começa escondida) -->
+      <div id="resposta" style="display: none;"></div>
+
+      <!-- Botões de ação (copiar/limpar) - também escondidos inicialmente -->
+      <div class="botoes-acoes" style="display: none;">
+        <button id="btnCopiar">📋 Copiar Resposta</button>
+        <button id="btnLimpar">🧹 Limpar</button>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Link para o JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
