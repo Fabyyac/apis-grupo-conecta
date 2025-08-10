@@ -1,0 +1,36 @@
+/* style.css */
+/* Aplica estilo básico ao corpo da página */
+body {
+  font-family: Arial, sans-serif; /* Define a fonte */
+  background-color: #f9f9f9; /* Cor de fundo clara */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza conteúdo */
+}
+
+/* Estiliza o cabeçalho */
+header h1 {
+  color: #333;
+}
+
+/* Estiliza os campos de texto */
+textarea, input {
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Estiliza os botões */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Estilo da resposta */
+#respostaContainer {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
