@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente de IA Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWp/JxhbY2c1oP4lC+A5a2q6VzXfI/c+8D5kK7XvN2E8f/a7X0" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>🤖 Assistente de IA</h1>
+            <div class="api-key-section">
+                <label for="apiKey">Google Gemini API Key</label>
+                <div class="api-key-group">
+                    <input type="password" id="apiKey" placeholder="Cole sua chave de API aqui" autocomplete="off">
+                    <button id="saveApiKey" title="Salvar chave da API"><i class="fas fa-save">Salvar</i></button>
+                </div>
+            </div>
+        </header>
+
+        <main class="chat-section">
+            <div class="input-area">
+                <textarea id="questionInput" placeholder="Digite sua pergunta..." rows="4"></textarea>
+                <button id="askButton" title="Perguntar (Ctrl + Enter)">Perguntar <i class="fas fa-paper-plane"></i></button>
+            </div>
+            
+            <div class="response-area" id="responseArea" style="display: none;">
+                <div class="response-header">
+                    <h2>Resposta da IA</h2>
+                    <div class="response-actions">
+                        <button id="btnCopy" title="Copiar resposta"><i class="far fa-copy"></i></button>
+                        <button id="btnClear" title="Limpar conversa"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+                <p id="aiResponseText"></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

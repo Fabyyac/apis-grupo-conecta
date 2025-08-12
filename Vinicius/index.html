@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistente de IA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Assistente de IA</h1>
+  </header>
+
+  <main>
+    <input type="password" id="apiKey" placeholder="Insira sua API Key"> <br>
+    <textarea id="pergunta" placeholder="Digite sua pergunta..."></textarea> <br>
+
+    <button id="enviar">Perguntar</button>
+    <button id="limpar">Limpar</button>
+
+    <p id="status"></p>
+
+    <section id="respostaContainer" style="display:none;">
+      <h2>Resposta:</h2>
+      <div id="resposta"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
