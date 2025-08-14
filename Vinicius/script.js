@@ -1,6 +1,7 @@
 window.onload = () => {
   const enviar = document.getElementById("enviar");
   const limpar = document.getElementById("limpar");
+  const copiarBtn = document.getElementById("copiar");
   const perguntaInput = document.getElementById("pergunta");
   const apiKeyInput = document.getElementById("apiKey");
   const respostaContainer = document.getElementById("respostaContainer");
@@ -25,9 +26,7 @@ window.onload = () => {
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             contents: [
               { parts: [{ text: pergunta }] }
@@ -56,6 +55,17 @@ window.onload = () => {
     status.textContent = "";
     enviar.disabled = false;
   }
+
+  copiarBtn.addEventListener("click", () => {
+    const texto = respostaDiv.textContent;
+    if (!texto) {
+      alert("Não há resposta para copiar.");
+      return;
+    }
+    navigator.clipboard.writeText(texto)
+      .then(() => alert("Resposta copiada!"))
+      .catch(() => alert("Erro ao copiar."));
+  });
 
   enviar.addEventListener("click", enviarPergunta);
 
