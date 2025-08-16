@@ -4,40 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistente de IA Web</title>
+    <link rel="icon" href="robot.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWp/JxhbY2c1oP4lC+A5a2q6VzXfI/c+8D5kK7XvN2E8f/a7X0" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
     <div class="container">
         <header class="header">
             <h1>🤖 Assistente de IA</h1>
+            <div class="controls">
+                <select id="apiProvider">
+                    <option value="gemini-flash">Google Gemini</option>
+                </select>
+                <button id="themeToggle" title="Alternar tema"><i class="fas fa-moon"></i></button>
+            </div>
             <div class="api-key-section">
                 <label for="apiKey">Google Gemini API Key</label>
                 <div class="api-key-group">
                     <input type="password" id="apiKey" placeholder="Cole sua chave de API aqui" autocomplete="off">
-                    <button id="saveApiKey" title="Salvar chave da API"><i class="fas fa-save">Salvar</i></button>
+                    <button id="saveApiKey" title="Salvar chave da API"><i class="fas fa-save"></i> Salvar</button>
                 </div>
             </div>
         </header>
 
         <main class="chat-section">
-            <div class="input-area">
-                <textarea id="questionInput" placeholder="Digite sua pergunta..." rows="4"></textarea>
-                <button id="askButton" title="Perguntar (Ctrl + Enter)">Perguntar <i class="fas fa-paper-plane"></i></button>
+            <div class="main-content">
+                <div id="responseArea" class="response-card" style="display: none;">
+                    <div class="response-header">
+                        <h2>Resposta da IA</h2>
+                        <div class="response-actions">
+                            <button id="btnCopy" title="Copiar resposta"><i class="far fa-copy"></i> Copiar</button>
+                            <button id="btnClear" title="Limpar conversa"><i class="fas fa-trash-alt"></i> Limpar</button>
+                        </div>
+                    </div>
+                    <div id="userQuestionText" class="user-question-text"></div>
+                    <div id="aiResponseText" class="ai-response-text"></div>
+                </div>
             </div>
             
-            <div class="response-area" id="responseArea" style="display: none;">
-                <div class="response-header">
-                    <h2>Resposta da IA</h2>
-                    <div class="response-actions">
-                        <button id="btnCopy" title="Copiar resposta"><i class="far fa-copy"></i></button>
-                        <button id="btnClear" title="Limpar conversa"><i class="fas fa-trash-alt"></i></button>
-                    </div>
+            <div class="input-area">
+                <textarea id="questionInput" placeholder="Digite sua pergunta..." rows="4" maxlength="1000"></textarea>
+                <div class="input-actions">
+                    <button id="toggleHistory" title="Ver histórico"><i class="fas fa-history"></i></button>
+                    <span id="charCount">0/1000</span>
+                    <button id="askButton" title="Perguntar (Ctrl + Enter)">Perguntar <i class="fas fa-paper-plane"></i></button>
                 </div>
-                <p id="aiResponseText"></p>
             </div>
         </main>
+
+        <div id="history-container" class="history-container">
+            <h3>Histórico</h3>
+            <ul id="historyTabs"></ul>
+            <button id="clearAllHistory" class="clear-all-history-btn" style="display: none;">Limpar todo o histórico</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
